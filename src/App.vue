@@ -59,10 +59,10 @@
   export default {
     data() {
       return {
-        inputPhoneValue: null,
-        inputDateValue: null,
-        inputTinValue: null,
-        inputSsnValue: null
+        inputPhoneValue: 111,
+        inputDateValue: 111,
+        inputTinValue: 1111,
+        inputSsnValue: 111
       }
     },
     mounted() {
