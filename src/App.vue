@@ -1,29 +1,73 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="container mt-5">
+
+    <div class="row justify-content-md-center mb-3">
+      <div class="col col-lg-1">
+        Date:
+      </div>
+      <div class="col-md-auto">
+        <mask-input v-model="inputDateValue" mask="99/99/9999"></mask-input>
+      </div>
+      <div class="col col-lg-2">
+        {{ inputDateValue }}
+      </div>
     </div>
-    <router-view/>
+    <div class="row justify-content-md-center mb-3">
+      <div class="col col-lg-1">
+        Phone:
+      </div>
+      <div class="col-md-auto">
+        <mask-input v-model="inputPhoneValue" mask="(999) 999-9999"></mask-input>
+      </div>
+      <div class="col col-lg-2">
+        {{ inputPhoneValue }}
+      </div>
+    </div>
+    <div class="row justify-content-md-center mb-3">
+      <div class="col col-lg-1">
+        Tin:
+      </div>
+      <div class="col-md-auto">
+        <mask-input v-model="inputTinValue" mask="99-9999999"></mask-input>
+      </div>
+      <div class="col col-lg-2">
+        {{ inputTinValue }}
+      </div>
+    </div>
+    <div class="row justify-content-md-center mb-3">
+      <div class="col col-lg-1">
+        Ssn:
+      </div>
+      <div class="col-md-auto">
+        <mask-input v-model="inputSsnValue" mask="999-99-9999"></mask-input>
+      </div>
+      <div class="col col-lg-2">
+        {{ inputSsnValue }}
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="less">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
+  <script>
+  import MaskInput from "./components/mask-input";
+  export default {
+    data() {
+      return {
+        inputPhoneValue: null,
+        inputDateValue: null,
+        inputTinValue: null,
+        inputSsnValue: null
+      }
+    },
+    mounted() {
+      console.log(this.$el)
+    },
+    components: {MaskInput}
+  }
+</script>
